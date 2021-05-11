@@ -37,4 +37,25 @@ const MORSE_CODE = {
       '-----':  '0',
     };
 
+decodeMorse = function(morseCode){
+      let wordCache = morseCode.split(' ');
+    
+    if(wordCache[0]==''){
+      for(let i=0; i<wordCache.length;i++){
+        if(wordCache[0]==''){
+         wordCache.shift();
+          }
+      }
+    };
+    
+    
+      
+    return wordCache
+      .map(x=>MORSE_CODE[x])
+      .join(' ')
+      .replace(/  (?! )| /g,'ble_ID-106210_dou')
+      .replace(/ble_ID-106210_double_ID-106210_dou/g,' ')
+      .replace(/ble_ID-106210_dou/g,'');
+      
+    }
 
