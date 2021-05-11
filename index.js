@@ -86,16 +86,18 @@ decodeMorse = function(morseCode){
     console.log(decodeMorse('...   ---   ...')); 
     //Expected Result: 'S O S'
 
-    
+
 //     //Alternitive Solution (uncomment block for testing)
 //     decodeMorse = function(morseCode){
+
 //       //Trim the whitespace from both ends of the string, 
 //       //then split it up, 
 //       //convert each letter from morse and loose the extra spaces, 
 //       //lastly join it back into a string.
+
 //             return morseCode
 //         .trim()
 //         .split(/  | /)
-//         .map( (code) => MORSE_CODE[code] || ' ')
+//         .map( (x) => MORSE_CODE[x] || ' ')
 //         .join('');
 //     }
