@@ -40,6 +40,7 @@ const MORSE_CODE = {
 decodeMorse = function(morseCode){
       let wordCache = morseCode.split(' ');
     
+      //First lets remove any spaces at the start and end
     if(wordCache[0]==''){
       for(let i=0; i<wordCache.length;i++){
         if(wordCache[0]==''){
@@ -48,8 +49,8 @@ decodeMorse = function(morseCode){
       }
     };
     
-    
-      
+    // Next we will return the converted morse with map then remove any exsesive
+    // spaces from the .split(' ') with out removing the spaces between the words.
     return wordCache
       .map(x=>MORSE_CODE[x])
       .join(' ')
@@ -59,3 +60,28 @@ decodeMorse = function(morseCode){
       
     }
 
+    //Test Cases
+    
+    console.log(decodeMorse('.-')); 
+    //Expected Result: 'A'
+    
+    console.log(decodeMorse('.')); 
+    //Expected Result: 'E'
+    
+    console.log(decodeMorse('..')); 
+    //Expected Result: 'I'
+    
+    console.log(decodeMorse('. .')); 
+    //Expected Result: 'EE'
+    
+    console.log(decodeMorse('.   .')); 
+    //Expected Result: 'E E'
+    
+    console.log(decodeMorse('...---...')); 
+    //Expected Result: 'SOS'
+    
+    console.log(decodeMorse('... --- ...')); 
+    //Expected Result: 'SOS'
+    
+    console.log(decodeMorse('...   ---   ...')); 
+    //Expected Result: 'S O S'
