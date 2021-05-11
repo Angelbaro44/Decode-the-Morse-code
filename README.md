@@ -43,3 +43,58 @@ The Morse code table is preloaded for you as a dictionary, feel free to use it:
 
 All the test strings would contain valid Morse code, so you may skip checking for errors and exceptions.
 This is mostly because otherwise the engine would simply ignore the tests, resulting in a "valid" solution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Test Cases:
+-
+
+        function testAndPrint(got, expected) {
+            if (got === expected) {
+                Test.expect(true);
+            }
+            else {
+                Test.expect(false, "Got '" + got + "', expected '" + expected + "'");
+            }
+        }
+
+        describe("Example from description", function(){
+          testAndPrint(decodeMorse('.... . -.--   .--- ..- -.. .'), 'HEY JUDE')
+        });
+
+        describe("Basic Morse decoding", function(){
+          testAndPrint(decodeMorse('.-'), 'A')
+          testAndPrint(decodeMorse('.'), 'E')
+          testAndPrint(decodeMorse('..'), 'I')
+          testAndPrint(decodeMorse('. .'), 'EE')
+          testAndPrint(decodeMorse('.   .'), 'E E')
+          testAndPrint(decodeMorse('...---...'), 'SOS')
+          testAndPrint(decodeMorse('... --- ...'), 'SOS')
+          testAndPrint(decodeMorse('...   ---   ...'), 'S O S')
+        });
+
+        describe("More complex tests", function(){
+          testAndPrint(decodeMorse(' . '), 'E')
+          testAndPrint(decodeMorse('   .   . '), 'E E')
+          testAndPrint(decodeMorse('      ...---... -.-.--   - .... .   --.- ..- .. -.-. -.-   -... .-. --- .-- -. 
+          ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   - .... .   .-.. .- --.. -.--   -.. --- --. .-.-.-  '),
+          'SOS! THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.')
+        });
+
+
+
+
